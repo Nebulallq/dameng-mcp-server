@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pip:*)",
+      "Bash(findstr:*)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(dir /s /b \"D:\\\\dmdbms\\\\bin\\\\dmdpi.dll\")",
+      "Bash(dir /s /b \"D:\\\\*dmdpi.dll\")",
+      "Bash(dir:*)",
+      "Bash(set PATH=E:Program FilesPremiumSoftdameng_odbc_winbin)",
+      "Bash(%PATH%)",
+      "Bash(cmd /c \"set PATH=E:\\\\Program Files\\\\PremiumSoft\\\\dameng_odbc_win\\\\bin;%PATH% && cd /d E:\\\\java\\\\ project\\\\dameng-mcp-server && python test_connection.py\")",
+      "Bash(cmd /c \"dir E:\\\\Program Files\\\\PremiumSoft\\\\dameng_odbc_win\\\\dmdpi.dll 2>nul && echo found\")",
+      "Bash(cmd /c dir:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
