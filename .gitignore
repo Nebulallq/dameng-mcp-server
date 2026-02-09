@@ -65,6 +65,9 @@ venv.bak/
 *.swo
 *~
 
+# Claude Code local settings
+.claude/settings.local.json
+
 # OS
 .DS_Store
 Thumbs.db
@@ -80,8 +83,3 @@ client_outputs/
 *.db
 *.sqlite
 *.sqlite3
-
-# Test outputs
-test_connection.py
-explore_db.py
-_nul
