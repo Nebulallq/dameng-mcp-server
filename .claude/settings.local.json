@@ -14,7 +14,16 @@
       "Bash(cmd /c \"dir E:\\\\Program Files\\\\PremiumSoft\\\\dameng_odbc_win\\\\dmdpi.dll 2>nul && echo found\")",
       "Bash(cmd /c dir:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd database exploration and connection test scripts\n\n- Add explore_db.py: Database exploration script\n- Add test_connection.py: Connection test with multiple ports\n- Update .gitignore: Remove test scripts from ignore list\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(timeout 10 git push:*)",
+      "Bash(cmd /c \"echo %APPDATA%\")",
+      "Bash(cmd /c \"dir /s /b %USERPROFILE%\\\\.claude\\\\*.json 2>nul\")",
+      "Bash(set DAMENG_PASSWORD=test)",
+      "Bash(timeout 3 python:*)",
+      "Bash(timeout 2 python:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
