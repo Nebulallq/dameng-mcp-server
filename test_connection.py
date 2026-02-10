@@ -7,15 +7,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 查找并添加达梦客户端 DLL 路径
-dm_home = r"E:\Program Files\PremiumSoft\dameng_odbc_win"
+dm_home = os.getenv("DM_HOME", r"E:\Program Files\PremiumSoft\dameng_odbc_win")
 if os.path.exists(os.path.join(dm_home, "dmdpi.dll")):
     os.add_dll_directory(dm_home)
     print(f"[OK] 已添加达梦客户端路径: {dm_home}")
 
 from dmPython import connect
 
-host = os.getenv("DAMENG_HOST", "10.215.146.129")
-user = os.getenv("DAMENG_USER", "sqlChiefUser")
+host = os.getenv("DAMENG_HOST", "localhost")
+user = os.getenv("DAMENG_USER", "SYSDBA")
 password = os.getenv("DAMENG_PASSWORD", "")
 
 # 尝试不同的端口配置

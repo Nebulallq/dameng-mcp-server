@@ -23,7 +23,19 @@
       "Bash(set DAMENG_PASSWORD=test)",
       "Bash(timeout 3 python:*)",
       "Bash(timeout 2 python:*)",
-      "Bash(git commit:*)"
-    ]
+      "Bash(git commit:*)",
+      "mcp__dameng__get_schema_info",
+      "Bash(claude mcp list)",
+      "mcp__dameng__execute_sql",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" status --short)",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" diff --stat)",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" log --oneline -3)",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" add -A)",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" commit -m \"$\\(cat <<''EOF''\nClean sensitive data and configure dontAsk mode\n\n- Update test_connection.py: remove hardcoded IP and user\n- Update explore_db.py: use DM_HOME from env\n- Add defaultMode: dontAsk to settings.local.json\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(cmd /c \"del /f /q \"\"E:\\\\java project\\\\dameng-mcp-server\\\\nul\"\"\")",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" add .claude/settings.local.json explore_db.py test_connection.py)",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" commit -m \"Clean sensitive data and configure dontAsk mode\")"
+    ],
+    "defaultMode": "dontAsk"
   }
 }

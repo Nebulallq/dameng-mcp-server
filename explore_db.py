@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 添加达梦客户端 DLL 路径
-dm_home = r"E:\Program Files\PremiumSoft\dameng_odbc_win"
+dm_home = os.getenv("DM_HOME", r"E:\Program Files\PremiumSoft\dameng_odbc_win")
 os.add_dll_directory(dm_home)
 
 from dmPython import connect
