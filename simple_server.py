@@ -17,12 +17,18 @@ import sys
 from typing import List
 
 # 添加达梦客户端 DLL 路径（在导入 dmPython 之前）
-dm_home = os.getenv("DM_HOME", r"E:\Program Files\PremiumSoft\dameng_odbc_win")
-if os.path.exists(dm_home):
-    dll_path = os.path.join(dm_home, "dmdpi.dll")
-    if os.path.exists(dll_path):
-        os.add_dll_directory(dm_home)
-        print(f"[INFO] 已添加达梦客户端路径: {dm_home}", file=sys.stderr)
+dm_home = os.getenv("DM_HOME")
+if dm_home and os.path.exists(dm_home):
+    # 将 DM_HOME 添加到 PATH，确保能找到 DLL
+    os.environ["PATH"] = dm_home + os.pathsep + os.environ["PATH"]
+    
+    # 尝试使用 add_dll_directory (Python 3.8+)
+    if hasattr(os, "add_dll_directory"):
+        try:
+            os.add_dll_directory(dm_home)
+            print(f"[INFO] 已添加达梦客户端路径: {dm_home}", file=sys.stderr)
+        except Exception as e:
+            print(f"[WARN] add_dll_directory 失败: {e}", file=sys.stderr)
 
 try:
     from dmPython import connect

@@ -12,10 +12,18 @@ from dameng_mcp_server.config import DatabaseConfig
 logger = logging.getLogger("dameng_mcp_server.database")
 
 # 添加达梦客户端 DLL 路径
-dm_home = os.getenv("DM_HOME", r"E:\Program Files\PremiumSoft\dameng_odbc_win")
-if os.path.exists(dm_home) and os.path.exists(os.path.join(dm_home, "dmdpi.dll")):
-    os.add_dll_directory(dm_home)
-    logger.info(f"已添加达梦客户端路径: {dm_home}")
+dm_home = os.getenv("DM_HOME")
+if dm_home and os.path.exists(dm_home):
+    # 将 DM_HOME 添加到 PATH，确保能找到 DLL
+    os.environ["PATH"] = dm_home + os.pathsep + os.environ["PATH"]
+    
+    # 尝试使用 add_dll_directory (Python 3.8+)
+    if hasattr(os, "add_dll_directory"):
+        try:
+            os.add_dll_directory(dm_home)
+            logger.info(f"已添加达梦客户端路径: {dm_home}")
+        except Exception as e:
+            logger.warning(f"add_dll_directory 失败: {e}")
 
 from dmPython import Connection, Cursor, connect
 

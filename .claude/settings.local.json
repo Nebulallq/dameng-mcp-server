@@ -34,7 +34,11 @@
       "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" commit -m \"$\\(cat <<''EOF''\nClean sensitive data and configure dontAsk mode\n\n- Update test_connection.py: remove hardcoded IP and user\n- Update explore_db.py: use DM_HOME from env\n- Add defaultMode: dontAsk to settings.local.json\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(cmd /c \"del /f /q \"\"E:\\\\java project\\\\dameng-mcp-server\\\\nul\"\"\")",
       "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" add .claude/settings.local.json explore_db.py test_connection.py)",
-      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" commit -m \"Clean sensitive data and configure dontAsk mode\")"
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" commit -m \"Clean sensitive data and configure dontAsk mode\")",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" status)",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" commit -m \"$\\(cat <<''EOF''\nRemove sensitive data and npm references\n\n- README.md: Remove npm-related content section\n- simple_server.py: Remove hardcoded DM_HOME default path\n- database.py: Remove hardcoded DM_HOME default path\n- Remove dontAsk mode from settings.local.json\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(cmd /c \"cd /d \"\"E:\\\\java project\\\\dameng-mcp-server\"\" && del .\\\\nul 2>nul && echo done\")",
+      "Bash(git -C \"E:\\\\java project\\\\dameng-mcp-server\" add README.md simple_server.py src/dameng_mcp_server/database.py .claude/settings.local.json)"
     ],
     "defaultMode": "dontAsk"
   }
